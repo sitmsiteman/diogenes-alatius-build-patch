@@ -1,0 +1,37 @@
+diff --git a/src/anal/makefile b/src/anal/makefile
+index 301c7b8..d81faa4 100755
+--- a/src/anal/makefile
++++ b/src/anal/makefile
+@@ -2,7 +2,7 @@
+ LEXLIB = -lfl
+ 
+ INCLUDE=../includes
+-CFLAGS= -O2 -I${INCLUDE}   -Wno-implicit-int   -Wno-implicit-function-declaration
++CFLAGS= -O2 -I${INCLUDE} -fcommon  -Wno-implicit-int   -Wno-implicit-function-declaration
+ RM=rm
+ CC=cc
+ CC=gcc
+diff --git a/src/gener/makefile b/src/gener/makefile
+index 3d4214b..0d1242e 100755
+--- a/src/gener/makefile
++++ b/src/gener/makefile
+@@ -11,7 +11,7 @@ GENEROBJ= genwd.o
+ CC=cc
+ CC=gcc
+ #CFLAGS= -O -I${INCLUDE}   -g
+-CFLAGS= -O2 -I${INCLUDE}   -Wno-implicit-int   -Wno-implicit-function-declaration
++CFLAGS= -O2 -I${INCLUDE} -fcommon  -Wno-implicit-int   -Wno-implicit-function-declaration
+ LINTFLAGS= -I${INCLUDE} -DDEBUG
+ RM=/bin/rm
+ CONJOBJ= conjmain.o conjsys.o combconj.o ppasstype.o
+diff --git a/src/gkends/makefile b/src/gkends/makefile
+index 9ba5d06..9f890e4 100755
+--- a/src/gkends/makefile
++++ b/src/gkends/makefile
+@@ -1,5 +1,5 @@
+ INCLUDE=../includes
+-CFLAGS= -O2 -I${INCLUDE}   -Wno-implicit-int   -Wno-implicit-function-declaration
++CFLAGS= -O2 -I${INCLUDE} -fcommon  -Wno-implicit-int   -Wno-implicit-function-declaration
+ RM=rm
+ ENDLIB=gkends.a
+ CC=cc

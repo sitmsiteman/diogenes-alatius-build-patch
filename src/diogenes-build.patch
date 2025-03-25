@@ -1,0 +1,13 @@
+diff --git a/mk.morpheus-alatius b/mk.morpheus-alatius
+index 1efe736..2a2e5df 100644
+--- a/mk.morpheus-alatius
++++ b/mk.morpheus-alatius
+@@ -13,6 +13,8 @@ $(MORPHEUS)/.git/HEAD:
+ 	mkdir -p $(BUILD)
+ 	cd $(BUILD) && git clone $(MORPHEUSREPO)
+ 	cd $(MORPHEUS) && git checkout $(MORPHEUSCOMMIT)
++	cp diogenes-alatius-make.patch $(MORPHEUS)
++	cd $(MORPHEUS) && patch -p1 < diogenes-alatius-make.patch
+ # export  CFLAGS="-Wno-error=implicit-function-declaration"
+ 	cd $(MORPHEUS)/src && make && make install
+ # Re-making the Greek stemlib causes cruncher to segfault, so stick with what is distributed.
